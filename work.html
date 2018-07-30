@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>zikirmatik</title>
+    <link rel="stylesheet" href="work.css">
+  </head>
+  <body>
+    <div class="ortala">
+      <div class="zikirmatik">
+
+        <h3>
+          Current : <span id="screen">0</span>
+        </h3>
+        <button id="incrementButton">+1</button>
+        <button id="resetButton">Reset</button>
+      </div>
+    </div>
+  </body>
+  <script>
+  const second =1000;
+
+  const state={
+    current :0,
+  }
+
+  function increment(){
+    state.current ++;
+  }
+  function reset(){
+    state.current = 0;
+  }
+
+  function render(){
+    var screen=document.getElementById('screen');
+    screen.innerText = state.current;
+  }
+
+  document.getElementById('incrementButton').addEventListener('click',function(){
+    increment();
+    render();
+  })
+  document.getElementById('resetButton').addEventListener('click',function(){
+    reset();
+    render();
+  })
+//  setInterval(increment,second);
+//  setInterval(reset,second*30);
+//  setInterval(render,second);
+
+  </script>
+</html>
